@@ -35,3 +35,14 @@ steps:
       # Write your commands here
       #!/bin/bash
       echo 'Hello world'
+- task: CmdLine@2
+  inputs:
+    script: 'az group create --name poojagrp --location eastus'
+             az vm create \
+            --resource-group poojagrp \
+            --name myVM \
+            --image Debain \
+            --public-ip-sku Standard \
+            --admin-username azureuser
+            --generate-ssh-keys
+            
