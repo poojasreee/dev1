@@ -28,16 +28,5 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-- task: CmdLine@2
-  inputs:
-    script: 'az group create --name poojagrp --location eastus'
-- task: CmdLine@2
-  inputs:
-    script: |
-      az vm create \
-        --resource-group poojagrp \
-        --name myVM \
-        --image Debian \
-        --admin-username azureuser \
-        --generate-ssh-keys
+
             
